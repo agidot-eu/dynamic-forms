@@ -37,6 +37,19 @@ Sidebar sidebar
 
 ```
 
+## Generator widoku online
+
+Narzędzie online generujące gui na podstawie opisu
+1. Otwórz formularz
+![image](https://github.com/user-attachments/assets/e8f424ce-1022-4bbf-8df5-b32b76a12c83)
+2. Wprowadzć opis widoku do pola tekstowego
+   ![image](https://github.com/user-attachments/assets/049dd243-c602-45b0-a994-25ed4fd07e0f)
+3. Kliknij generuj - poniżej pojawi się log z parsowania formatki
+4. Kliknij 'Przejdź do /df/{id}' - pojawi się formatka
+![image](https://github.com/user-attachments/assets/dfdd018f-756e-4d31-a327-ccebfa2b3210)
+
+
+
 ## 🔷 Struktura ogólna
 
 Format opisuje interfejs użytkownika w postaci tekstowej. Wcięcia oznaczają strukturę zagnieżdżeń. Każdy element odpowiada komponentowi UI.
