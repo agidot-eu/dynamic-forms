@@ -15,7 +15,7 @@ Druga sekcja section
  Szablon nagłówka 5 h5
 
 
-Przykładowy nagłówek aplikacji header
+Przykładowy layout aplikacji header
  LogoFirmy img datasource="https://structura.agidot.eu/api/upload-image/get/image-13.png"
  g1
  Rejestracja link 
