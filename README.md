@@ -49,6 +49,41 @@ Narzędzie online generujące gui na podstawie opisu
 ![image](https://github.com/user-attachments/assets/038b3b9f-4ed2-4ba6-bb4d-2e1a85e015a3)
 
 
+## Współpraca z AI - chatGPT
+
+![image](https://github.com/user-attachments/assets/602ce7e3-1d31-49e8-a3c1-e22b232c13f1)
+
+Przykłądowy prompt
+```
+bazując na https://agidot.eu/blog/dynamic-forms-ver-9/
+wygeneruj mi tekstowy opis formatki:
+
+formatka rejestrująca nowy typ produktu z jego nazwą, kodem, typem, jednostką miary, wagą jednostkową oraz wagą opakowania i ilością w opakowaniu
+```
+
+Odpowiedź chata
+![image](https://github.com/user-attachments/assets/92f53ae5-826b-4677-b7ee-6aecd292ad6e)
+
+```
+:NowyProdukt form
+Rejestracja nowego typu produktu h3
+
+DanePodstawowe section
+ Dane podstawowe produktu h5
+ Nazwa textbox - Nazwa produktu
+ Kod textbox - Kod produktu
+ Typ dropdown datasource="['Elektronika','Odzież','Spożywcze','Inne']" - Wybierz typ produktu
+ JednostkaMiary dropdown datasource="['szt.','kg','l','m']" - Jednostka miary
+
+ParametryLogistyczne section
+ Parametry logistyczne h5
+ WagaJednostkowa textbox - Waga jednostkowa (kg)
+ WagaOpakowania textbox - Waga opakowania zbiorczego (kg)
+ IloscWOpakowaniu textbox - Ilość sztuk w opakowaniu
+
+```
+![image](https://github.com/user-attachments/assets/2ac1e7f0-44ec-4c33-a9c2-1982bfb8f29d)
+
 
 
 ## 🔷 Struktura ogólna
