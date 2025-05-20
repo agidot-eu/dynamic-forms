@@ -1,5 +1,5 @@
 # dynamic-forms (Opis formatu GUI - Structura DynamicForms DSL)
-Prosty opis formularzy
+Prosty opis formularzy - zoptymalizowany do pracy z AI - podeślij link do tej strony do chatGPT i poproś o wygenerowanie widoku 
 
 ## Szablon startowy
 
