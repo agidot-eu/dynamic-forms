@@ -46,7 +46,8 @@ Narzędzie online generujące gui na podstawie opisu
    ![image](https://github.com/user-attachments/assets/049dd243-c602-45b0-a994-25ed4fd07e0f)
 3. Kliknij generuj - poniżej pojawi się log z parsowania formatki
 4. Kliknij 'Przejdź do /df/{id}' - pojawi się formatka
-![image](https://github.com/user-attachments/assets/dfdd018f-756e-4d31-a327-ccebfa2b3210)
+![image](https://github.com/user-attachments/assets/038b3b9f-4ed2-4ba6-bb4d-2e1a85e015a3)
+
 
 
 
