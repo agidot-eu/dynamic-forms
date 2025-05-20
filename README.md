@@ -6,8 +6,8 @@ Prosty opis formularzy
 ```
 :PozyczkaOnline form
 Szablon nagłówka 3 h3
-DaneFirmy section
- Dane firmy h5
+nazwa sekcji section
+ Nagłówek 5 h5
  Nip textbox
  NumerTelefonu textbox
  AdresEmail textbox
