@@ -1,5 +1,5 @@
-# dynamic-forms
-Prosty opis formularzy, encji i procesów
+# dynamic-forms (Opis formatu GUI - Structura DynamicForms DSL)
+Prosty opis formularzy
 
 ## Szablon startowy
 
@@ -35,4 +35,150 @@ Sidebar sidebar
   Copyright Ⓒ 2025 label
 
 
+```
+
+## 🔷 Struktura ogólna
+
+Format opisuje interfejs użytkownika w postaci tekstowej. Wcięcia oznaczają strukturę zagnieżdżeń. Każdy element odpowiada komponentowi UI.
+
+---
+
+## ✅ Formularz (`form`)
+- Definicja: `:NazwaFormularza form`
+- Odpowiada klasie `FormDefinition`
+- Zawiera listę kontrolek
+
+### Przykład:
+```
+:DanePodstawowe form
+Imie textbox - Imię użytkownika
+AkceptujeRegulamin checkbox
+ListaFirm dropdown datasource="['firma1','firma2']"
+```
+
+---
+
+## ✅ Kontrolki treści (`ContentControl`)
+
+| DSL            | Klasa C#        | Opis                                           |
+|----------------|-----------------|------------------------------------------------|
+| `textbox`      | `TextBox`       | Pole tekstowe                                 |
+| `checkbox`     | `CheckBox`      | Pole wyboru                                   |
+| `dropdown`     | `ComboBox`      | Lista rozwijana (z `datasource`)              |
+| `img`          | `Image`         | Obrazek (z `datasource` URL)                  |
+| `label`        | `TextBlock`     | Etykieta                                       |
+| `link`         | `Link`          | Link (z `datasource`)                         |
+| `h1`–`h6`      | `Heading`       | Nagłówek (poziom `HeaderLevel`)               |
+
+---
+
+## ✅ Kontrolki kontenerowe (`ContainerControl`)
+
+| DSL            | Klasa C#        | Opis                                           |
+|----------------|-----------------|------------------------------------------------|
+| `section`      | `Section`       | Sekcja formularza                             |
+| `tabs`         | `Tabs`          | Zakładki                                       |
+| `tab`          | `Tab`           | Pojedyncza zakładka                            |
+| `column`       | `Column`        | Kolumna                                        |
+| `row`          | `Row`           | Wiersz                                         |
+| `grid`         | `Grid`          | Siatka                                         |
+| `stack`        | `Stack`         | Układ pionowy                                 |
+| `formfield`    | `FormField`     | Grupa pól z etykietą                           |
+| `panelmenu`    | `PanelMenu`     | Menu w panelu                                  |
+| `panelmenuitem`| `PanelMenuItem` | Element menu panelowego                        |
+
+### Przykład:
+```
+Zgody section
+ PodstawoweZgody formfield
+  regulamin checkbox - Akceptacja regulaminu
+```
+
+---
+
+## ✅ Tabele i dane (`ItemsContainerControl`)
+
+| DSL         | Klasa C#     | Opis                               |
+|-------------|--------------|------------------------------------|
+| `datagrid`  | `Table`      | Tabela z wierszami i kolumnami     |
+| `column`    | `DataColumnControl` | Kolumna tabeli              |
+
+### Przykład:
+```
+Produkty datagrid
+ Lp column
+ Nazwa column
+ Cena column
+```
+
+---
+
+## ✅ Layout (`Layout`, `Header`, `Sidebar`, `Footer`)
+
+| DSL        | Klasa C#   | Opis                                |
+|------------|------------|-------------------------------------|
+| `header`   | `Header`   | Górna część layoutu                 |
+| `sidebar`  | `Sidebar`  | Lewa/prawa część layoutu            |
+| `footer`   | `Footer`   | Dolna część layoutu                 |
+
+### Przykład:
+```
+Header header
+ LogoFirmy img datasource="https://..."
+ Rejestracja link 
+
+Sidebar sidebar
+ column
+  LogoFirmy img
+  NazwaFirmy label
+ panelmenu
+  Analiza panelmenuitem
+```
+
+---
+
+## 🔧 Atrybuty i rozszerzenia
+
+- `- Opis` — tekst wyświetlany przy kontrolce
+- `class="..."` — klasa CSS
+- `width=...` — szerokość
+- `datasource="..."` — źródło danych (dla `dropdown`, `img`, `link`)
+
+---
+
+## 🏗️ Mapowanie DSL → C#
+
+| DSL              | Klasa C#                                 |
+|------------------|-------------------------------------------|
+| `form`           | `FormDefinition`                         |
+| `textbox`        | `TextBox`                                |
+| `checkbox`       | `CheckBox`                               |
+| `dropdown`       | `ComboBox`                               |
+| `img`            | `Image`                                  |
+| `label`          | `TextBlock`                              |
+| `link`           | `Link`                                   |
+| `section`        | `Section`                                |
+| `tabs` / `tab`   | `Tabs`, `Tab`                            |
+| `datagrid`       | `Table`                                  |
+| `column`         | `DataColumnControl`                      |
+| `panelmenuitem`  | `PanelMenuItem`                          |
+
+---
+
+## 🧪 Kompletny przykład:
+
+```
+:PozyczkaOnline form
+Pożyczka online h3
+
+DaneFirmy section
+ Dane firmy h5
+ Nip textbox
+ NumerTelefonu textbox
+ AdresEmail textbox
+
+Zgody section
+ PodstawoweZgody formfield
+  regulamin checkbox - Zgoda na regulamin
+  przetwarzanie checkbox - Zgoda na przetwarzanie danych
 ```
